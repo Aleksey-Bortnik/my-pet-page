@@ -173,10 +173,121 @@ body {
     text-shadow: 0px 1px 8px rgb(30, 30, 30);
 }
 
+.title {
+    text-align: center;
+    color: rgba(128, 128, 128, 0.833);
+
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 0px 1px 8px rgb(30, 30, 30);
+}
+
+.main-text {
+    text-align: center;
+    color: rgba(128, 128, 128, 0.833);
+
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0px 1px 8px rgb(30, 30, 30);
+}
+
 .input-error {
     background-color: rgb(129, 129, 129);
     font-size: 25px;
     font-weight: bold;
     color: black;
+}
 
+.coffe-type-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 20px;
+}
+
+/* inputs */
+
+.label {
+    color: rgba(128, 128, 128, 0.833);
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0px 1px 8px rgb(30, 30, 30);
+}
+
+.chb {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.chb+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.chb+label::before {
+    content: '';
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 2px solid #fac65a;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-color: #fac65a;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    transition: background 0.2s;
+}
+
+.chb:checked+label::before {
+    border-color: #fac65a;
+    background-color: #fac65a;
+    background-image: url(./img/coffee.png);
+    background-size: 60px 60px;
+    animation: shadow 3s ease-in-out infinite;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 6px;
+    height: 15px;
+    border-radius: 5px;
+    background: #fac65a;
+    outline: none;
+    opacity: 0.8;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 60px;
+    height: 60px;
+    background: url(./img/coffee.png);
+    background-size: 55px 60px;
+    cursor: pointer;
+    animation: shadow 3s ease-in-out infinite;
+
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: url(./img/coffee.png);
+    cursor: pointer;
+    animation: shadow 3s ease-in-out infinite;
 }
