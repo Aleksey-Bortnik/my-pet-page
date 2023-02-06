@@ -3,7 +3,7 @@
 //* Now they have two problems.
 //? (c) Jamie Zawinski, regex.info
 
-
+//!!! Separate file for each module. Reove jquery. set up webpack
 // Settings:
 
 const form = (function () {
