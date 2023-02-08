@@ -1,1 +1,4 @@
-structure-plan.txt
+.idea
+node_modules
+dist
+
