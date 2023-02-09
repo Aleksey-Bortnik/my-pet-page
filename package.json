@@ -24,7 +24,11 @@
     "url": "https://github.com/Aleksey-Bortnik/my-pet-page/issues"
   },
   "homepage": "https://github.com/Aleksey-Bortnik/my-pet-page#readme",
+  "browserslist": "> 0.25%, not dead",
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",

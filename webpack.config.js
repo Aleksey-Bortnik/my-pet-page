@@ -2,7 +2,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const CopyPlugin = require('copy-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -34,20 +34,30 @@ module.exports = {
         //         }
         //     ]
         // }),
-        // new MiniCssExtractPlugin({
-        //     filename: '[name].css'
-        // })
+        new MiniCssExtractPlugin({
+            filename: '[name].css'
+        })
     ],
     module: {
         rules: [ //rules for modules (configure loaders, parser options, etc.)
             {
                 test: /\.s[ac]ss$/i, //regex for scss files
                 use: [
-                    // MiniCssExtractPlugin.loader,
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader',
                 ],
             },
-        ],
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            },
+        ]
     }
 }
